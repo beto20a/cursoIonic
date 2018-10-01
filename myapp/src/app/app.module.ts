@@ -1,3 +1,7 @@
+import { FilmeDetalhePageModule } from './../pages/filme-detalhe/filme-detalhe.module';
+import { SobrePageModule } from './../pages/sobre/sobre.module';
+import { ConfiguracoesPageModule } from './../pages/configuracoes/configuracoes.module';
+import { ConfigProvider } from './../providers/config/config';
 import { HttpClientModule } from '@angular/common/http';
 import { FeedPageModule } from './../pages/feed/feed.module';
 import { IntroPageModule } from './../pages/intro/intro.module';
@@ -14,6 +18,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MovieProvider } from '../providers/movie/movie';
+import { PerfilPageModule } from '../pages/perfil/perfil.module';
+import { LoadControllerProvider } from '../providers/load-controller/load-controller';
 
 @NgModule({
   declarations: [
@@ -29,7 +35,12 @@ import { MovieProvider } from '../providers/movie/movie';
     IonicModule.forRoot(MyApp),
     FeedPageModule,
     IntroPageModule,
-    HttpClientModule
+    HttpClientModule,
+    ConfiguracoesPageModule,
+    SobrePageModule,
+    PerfilPageModule,
+    FilmeDetalhePageModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,8 +55,11 @@ import { MovieProvider } from '../providers/movie/movie';
     StatusBar,
     SplashScreen,
     MovieProvider,
+    ConfigProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MovieProvider
+    MovieProvider,
+    ConfigProvider,
+    LoadControllerProvider
   ]
 })
 export class AppModule {}

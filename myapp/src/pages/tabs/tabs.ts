@@ -1,3 +1,4 @@
+import { ConfiguracoesPage } from './../configuracoes/configuracoes';
 import { FeedPage } from './../feed/feed';
 import { Component } from '@angular/core';
 
@@ -11,6 +12,7 @@ export class TabsPage {
 
   tab1Root = HomePage;
   tab4Root = FeedPage;
+  tab5Root = ConfiguracoesPage;
 
   constructor() {
 
